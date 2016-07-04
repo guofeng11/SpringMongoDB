@@ -33,7 +33,7 @@ public class SKURepositoryTest {
 	@Test
 	public void testFindByProperty() {
 
-		List<SKU> skus = skuRepository.findByProperty("test", "赵昱程");
+		List<SKU> skus = skuRepository.findByProperty("test", "gf");
 		if (skus.isEmpty()) {
 			System.out.println("没有数据");
 		} else {

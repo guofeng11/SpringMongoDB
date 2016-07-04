@@ -1,6 +1,6 @@
 package cn.com;
 
-import java.util.List;
+/*import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -22,19 +22,19 @@ public class ApplicationConfig extends AbstractMongoConfiguration {
 
 	@Autowired
 	private List<Converter<?, ?>> converters;
-	/* 
+	 
 	 * (non-Javadoc)
 	 * @see org.springframework.data.mongodb.config.AbstractMongoConfiguration#getDatabaseName()
-	 */
+	 
 	@Override
 	protected String getDatabaseName() {
 		return "database";
 	}
 
-	/* 
+	 
 	 * (non-Javadoc)
 	 * @see org.springframework.data.mongodb.config.AbstractMongoConfiguration#mongo()
-	 */
+	 
 	@Override
 	public Mongo mongo() throws Exception {
 
@@ -43,17 +43,17 @@ public class ApplicationConfig extends AbstractMongoConfiguration {
 		return mongo;
 	}
 
-	/* 
+	 
 	 * (non-Javadoc)
 	 * @see org.springframework.data.mongodb.config.AbstractMongoConfiguration#customConversions()
-	 */
+	 
 	@Override
 	public CustomConversions customConversions() {
 		return new CustomConversions(converters);
 	}
-	/*
+	
 	 * 去掉 _class
-	 */
+	 
 	@Bean
 	@Override
 	public MappingMongoConverter mappingMongoConverter() throws Exception {
@@ -67,4 +67,4 @@ public class ApplicationConfig extends AbstractMongoConfiguration {
 	  }
 
 }
-
+*/

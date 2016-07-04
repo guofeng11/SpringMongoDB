@@ -13,21 +13,29 @@
 
 
 	<context:property-placeholder location="classpath:mongo.properties" />
-
-	<mongo:mongo id="mongo" host="${mongo.host}" port="${mongo.port}">
+	
+	<mongo:mongo-client id="mongoClient" host="${mongo.host}"
+		port="${mongo.port}">
+		<mongo:client-options connect-timeout="${mongo.connectTimeout}"
+			connections-per-host="${mongo.connectionsPerHost}" max-wait-time="${mongo.maxWaitTime}"
+			socket-keep-alive="${mongo.socketKeepAlive}" socket-timeout="${mongo.socketTimeout}"
+			threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}" />
+	</mongo:mongo-client>
+    <!-- mongo 2.6建议使用 mongoclient -->
+	<!-- <mongo:mongo id="mongo" host="${mongo.host}" port="${mongo.port}">
 		<mongo:options connections-per-host="${mongo.connectionsPerHost}"
 			threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}"
 			connect-timeout="${mongo.connectTimeout}" max-wait-time="${mongo.maxWaitTime}"
 			auto-connect-retry="${mongo.autoConnectRetry}" socket-keep-alive="${mongo.socketKeepAlive}"
 			socket-timeout="${mongo.socketTimeout}" slave-ok="${mongo.slaveOk}"
 			write-number="1" write-timeout="0" write-fsync="true" />
-	</mongo:mongo>
+	</mongo:mongo> -->
 
 	<mongo:db-factory id="mongoDbFactory" dbname="SKU"
-		mongo-ref="mongo" />
+		mongo-ref="mongoClient" />
 	<!-- 自增id库 -->
 	<mongo:db-factory id="mongoDbFactoryIDS" dbname="IDS"
-		mongo-ref="mongo" />
+		mongo-ref="mongoClient" />
 	<!-- 自定义实体转换 -->
 	<mongo:mapping-converter id="mongoConverter"
 		type-mapper-ref="customMongoTypeMapper">

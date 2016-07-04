@@ -48,7 +48,7 @@ public class SKUServiceImplTest {
 		sku.setName("test");
 		PropertySection property =new PropertySection();
 		property.setKey("test");
-		property.setValue("赵昱程");
+		property.setValue("gf");
 		List<PropertySection> propertySections=new ArrayList<PropertySection>();
 		propertySections.add(property);
 		sku.setProperty(propertySections);
