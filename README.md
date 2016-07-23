@@ -1,0 +1,2 @@
+# SpringMongoDB
+简单的使用spring mongodb及spring 生成restful模式的服务。包括使用多个库mongoTemplate
