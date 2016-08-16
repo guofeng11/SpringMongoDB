@@ -21,8 +21,8 @@
 			socket-keep-alive="${mongo.socketKeepAlive}" socket-timeout="${mongo.socketTimeout}"
 			threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}" />
 	</mongo:mongo-client>
-    <!-- mongo 2.6建议使用 mongoclient -->
-	<!-- <mongo:mongo id="mongo" host="${mongo.host}" port="${mongo.port}">
+   <!--  mongo 2.6建议使用 mongoclient -->
+<!-- 	<mongo:mongo id="mongo" host="${mongo.host}" port="${mongo.port}">
 		<mongo:options connections-per-host="${mongo.connectionsPerHost}"
 			threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}"
 			connect-timeout="${mongo.connectTimeout}" max-wait-time="${mongo.maxWaitTime}"
